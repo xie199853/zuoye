@@ -1,0 +1,9 @@
+1. 初始化本地仓库
+- git init  
+
+2. 新建一个.gitignore
+- 忽略掉 node_modules
+
+3. 将文件添加到本地仓库
+ - 1. git add .   --> 将本地文件添加到暂存区
+ - 2. git commit -m '信息'  --> 把暂存区的文件添加到本地仓库
