@@ -11,7 +11,34 @@
 <body>
   <script>
     // 写完作业
+    
+    // 利用reduce 求 1-100的和
+    let arr = Array.from(Array(101), (val,key) =>key);//第二个参数作用类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组
+    // console.log(arr)
+    function sumArr(arr) {
+      return arr.reduce((t,v) => t+v, 0)//t,累计器完成计算的返回值;v,当前元素
+    }
+   console.log(sumArr(arr));
+
+
+
+//    封装一个函数, 利用reduce处理http://www.baidu.com/?name=zhangsan&age=18&sex=nan, 要求返回一个对象
+// 输出的结果 : { name:"zhangsan",age:18,sex:nan }作业
+
+function process(url) {
+  let arr = url.split("?").slice(1).join().replace(/=/g,"&").split('&')
+  return arr.reduce(function(acc,item,index,arr){
+    if(index % 2 == 0) {
+      acc[item]=arr[index + 1]
+    }
+    return acc
+  })
+}
+console.log(process('http://www.baidu.com/?name=zhangsan&age=18&sex=nan') );
+// // 输出:  { name:"zhangsan",age:18,sex:nan }
+
   </script>
+  <!-- <script src="../src/main.js"></script> -->
 </body>
 
 </html>
